@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>موقعي الشخصي</title>
+  <style>
+    :root {
+      --bg: #f7f7f9;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #4b5563;
+      --accent: #4f46e5;
+      --accent-soft: #eef2ff;
+      --shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+      --radius: 16px;
+      --font: "Inter", "Cairo", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 18px 48px;
+    }
+    .card {
+      background: var(--card);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 28px;
+      width: min(980px, 100%);
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 280px 1fr;
+    }
+    @media (max-width: 820px) {
+      .card { grid-template-columns: 1fr; padding: 24px; }
+      .avatar { justify-content: center; }
+    }
+    .avatar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+    .avatar img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--accent-soft);
+      box-shadow: var(--shadow);
+    }
+    .name { font-size: 1.6rem; font-weight: 700; }
+    .title { color: var(--muted); font-weight: 500; }
+    .social { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .pill {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid rgba(79, 70, 229, 0.2);
+    }
+    .content { display: flex; flex-direction: column; gap: 18px; }
+    .section h2 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
+    .section p { margin: 0; color: var(--muted); }
+    .list {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .badge {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-weight: 600;
+      color: var(--text);
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 18px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.35);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    .cta:hover { transform: translateY(-1px); }
+    .cta:active { transform: translateY(0); box-shadow: 0 6px 18px rgba(79, 70, 229, 0.3); }
+    .cta-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+      box-shadow: none;
+    }
+    .cta-group { display: flex; gap: 10px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <article class="card">
+      <section class="avatar">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="صورة شخصية">
+        <div class="name">اسمك هنا</div>
+        <div class="title">مطوّر واجهات – عاشق للتصميم البسيط</div>
+        <div class="social">
+          <a class="pill" href="mailto:you@example.com">البريد</a>
+          <a class="pill" href="https://linkedin.com" target="_blank">LinkedIn</a>
+          <a class="pill" href="https://github.com" target="_blank">GitHub</a>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="section">
+          <h2>نبذة سريعة</h2>
+          <p>
+            أحب بناء تجارب رقمية أنيقة وبسيطة. أركز على التفاصيل الصغيرة التي تجعل
+            المواقع مريحة وسهلة الاستخدام. أعمل حاليًا على مشاريع حرة وأبحث عن فرص جديدة.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>ما أقدمه</h2>
+          <div class="list">
+            <div class="badge">تصميم واجهات مخصصة</div>
+            <div class="badge">تطوير مواقع سريعة الاستجابة</div>
+            <div class="badge">تحسين تجربة المستخدم</div>
+            <div class="badge">برمجة نظيفة وقابلة للصيانة</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>أحدث الأعمال</h2>
+          <p>أضف 3–4 روابط مختصرة لمشاريعك أو لقطات شاشة.</p>
+        </div>
+
+        <div class="section">
+          <h2>مهارات سريعة</h2>
+          <div class="list">
+            <div class="badge">HTML / CSS / JS</div>
+            <div class="badge">React / Next.js</div>
+            <div class="badge">UI/UX</div>
+            <div class="badge">أدوات تصميم: Figma</div>
+          </div>
+        </div>
+
+        <div class="section cta-group">
+          <button class="cta" onclick="window.location='mailto:you@example.com'">لنتواصل</button>
+          <button class="cta cta-outline" onclick="window.open('https://your-resume-link.com','_blank')">
+            السيرة الذاتية
+          </button>
+        </div>
+      </section>
+    </article>
+  </div>
+</body>
+</html>
